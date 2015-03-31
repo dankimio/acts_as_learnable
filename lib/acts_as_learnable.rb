@@ -1,6 +1,5 @@
 require 'active_record'
 require 'acts_as_learnable/base'
-require 'byebug'
 
 module ActsAsLearnable
   # Extend ActiveRecord if defined
