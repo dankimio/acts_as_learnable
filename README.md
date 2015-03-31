@@ -1,6 +1,6 @@
 # ActsAsLearnable
 
-ActsAsLearnable is a Ruby gem for ActiveRecord models. It provides a simple way to create flashcards in your app. It automatically schedules flashcards for review depending on recall quality (1 to 5). You can easily create a Spaced Repetition System (SRS) using this gem.
+ActsAsLearnable is a Ruby gem for ActiveRecord models. It provides a simple way to create flashcards in your app. It automatically schedules flashcards for review depending on recall quality (1 to 5). You can easily create a Spaced Repetition System (SRS) using this gem. Flashcards are scheduled using SuperMemo 2 algorithm.
 
 ## Installation
 
@@ -18,6 +18,11 @@ Or install it yourself as:
 
     $ gem install acts_as_learnable
 
+Create and run migrations (will add flashcard fields if table already exists):
+
+    $ rails generate flashcard MODEL
+    $ rake db:migrate
+
 ## Usage
 
 Within your model call `acts_as_learnable` method:
@@ -31,18 +36,6 @@ end
 It will automatically extend your class with all necessary methods.
 
 Make sure you have the following fields on the model (generators will be added later):
-
-```ruby
-ActiveRecord::Schema.define(version: 1) do
-  create_table :flashcards do |t|
-    t.float :easiness_factor, default: 2.5
-    t.integer :repetitions, default: 0
-    t.integer :interval, default: 0
-    t.date :due, default: nil
-    t.date :studied_at, default: nil
-  end
-end
-```
 
 Then you can review items:
 
@@ -66,6 +59,5 @@ card.repetitions # => 1
 
 ## TODO
 
-* Migration generators
 * More detailed README
 * Other repetition algorithms (Anki)
