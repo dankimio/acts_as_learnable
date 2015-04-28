@@ -35,9 +35,7 @@ end
 
 It will automatically extend your class with all necessary methods.
 
-Make sure you have the following fields on the model (generators will be added later):
-
-Then you can review items:
+Then you can review flashcards:
 
 ```ruby
 card = Flashcard.create
