@@ -57,5 +57,5 @@ card.repetitions # => 1
 
 ## TODO
 
-* More detailed README
-* Other repetition algorithms (Anki)
+- [ ] More detailed README
+- [ ] Other repetition algorithms (Anki)
