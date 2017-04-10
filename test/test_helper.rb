@@ -18,7 +18,7 @@ def setup_db
 end
 
 def teardown_db
-  ActiveRecord::Base.connection.tables.each do |table|
+  ActiveRecord::Base.connection.data_sources.each do |table|
     ActiveRecord::Base.connection.drop_table(table)
   end
 end
