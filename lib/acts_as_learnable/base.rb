@@ -71,7 +71,7 @@ module ActsAsLearnable
         when 1 then 1
         when 2 then 6
         else
-          interval(repetitions - 1) * easiness_factor
+          (repetitions - 1) * easiness_factor
         end
     end
 
