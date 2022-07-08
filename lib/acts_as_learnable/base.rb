@@ -65,7 +65,6 @@ module ActsAsLearnable
 
     # Update interval according to the formula
     def update_interval
-      # TODO: Extract magic numbers
       self.interval =
         case repetitions
         when 1 then 1
