@@ -6,10 +6,10 @@ class FlashcardGenerator < ActiveRecord::Generators::Base
 
   desc 'This generator creates a migration file with flashcard fields.'
 
-  source_root File.expand_path('../templates', __FILE__)
+  source_root File.expand_path('templates', __dir__)
 
   def install_flashcards
-    if schema_exists? && File.read("#{destination_root}/db/schema.rb") =~ /create_table \"#{table_name}\"/
+    if schema_exists? && File.read("#{destination_root}/db/schema.rb") =~ /create_table "#{table_name}"/
       migration_template('add_fields_migration.rb', "db/migrate/add_flashcard_fields_to_#{table_name}.rb")
     else
       migration_template('create_table_migration.rb', "db/migrate/create_#{table_name}.rb")

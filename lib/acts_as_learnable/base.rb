@@ -15,7 +15,7 @@ module ActsAsLearnable
 
   module InstanceMethods
     def review(recall_quality)
-      fail unless (1..5).include?(recall_quality)
+      raise unless (1..5).include?(recall_quality)
 
       # If the quality of response was lower than 3, then start repetitions from the beginning
       reset and return if recall_quality <= 2
